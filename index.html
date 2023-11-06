@@ -10,11 +10,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
+    <div class="header">
+      <a href="#default" class="logo">Karma</a>
+      <div class="header-right">
+        <img class="nit_logo" src="logo.png" alt="">
+      </div>
+    </div>
     <div class="container">
       <div class="wrapper">
         <div class="text-input">
-          <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
-          <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+          <!-- <textarea spellcheck="false" class="from-text" placeholder="Enter text" style='white-space:pre' id="good"></textarea> -->
+          <textarea spellcheck="false" class="from-text" placeholder="Enter text" id="good"></textarea>
+          <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation" id="hindi"></textarea>
         </div>
         <ul class="controls">
           <li class="row from">
@@ -30,15 +37,23 @@
             <div class="icons">
               <!-- <i id="to" class="fas fa-volume-up"></i> -->
               <i id="to" class="fas fa-copy"></i>
+              <i class="fa fa-download" onclick="ExportToDoc('hindi')">
+
+              </i>
+              <!-- <button onclick="foo('good')">good</button> -->
             </div>
           </li>
         </ul>
       </div>
       <button>Translate Text</button>
     </div>
+    <div class="footer">
+       <p>&copy; Department of Computer Science and Engineering, NIT Srinagar </p>
+    </div>
 
     <script src="js/countries.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/texttoword.js"></script>
 
   </body>
 </html>
