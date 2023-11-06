@@ -6,20 +6,25 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10px;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+  /* padding: 10px 0; */
   min-height: 100vh;
   background: #5372F0;
 }
 .container{
-  max-width: 690px;
+  max-width:70%;
   width: 100%;
+  /* margin: 6rem auto; */
   padding: 30px;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.01);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .wrapper{
   border-radius: 5px;
@@ -122,6 +127,55 @@ body{
   font-size: 17px;
   border-radius: 5px;
   background: #5372F0;
+}
+.header {
+  overflow: hidden;
+  /* background-color: #e0e0eb; */
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(2px);
+  padding: 5px 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  /* line-height: 25px; */
+  border-radius: 4px;
+}
+
+
+.header a.logo {
+  font-size: 25px;
+  /* font-weight: bold; */
+}
+.footer{
+  text-align: center;
+  width: 100%;
+  max-width: 1120px;
+  height: 50px;
+  font-size: small;
+  color: white;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+.nit_logo{
+   height:50px;
+   width: 50px;
 }
 
 @media (max-width: 660px){
