@@ -14,7 +14,7 @@ body{
   background: #5372F0;
 }
 .container{
-  max-width:70%;
+  max-width:75%;
   width: 100%;
   /* margin: 6rem auto; */
   padding: 30px;
@@ -45,7 +45,7 @@ body{
   outline: none;
   resize: none;
   background: none;
-  font-size: 18px;
+  font-size: 14px;
   padding: 10px 15px;
   border-radius: 5px;
 }
