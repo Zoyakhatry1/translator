@@ -2,7 +2,7 @@ const fromText = document.querySelector(".from-text"),
 toText = document.querySelector(".to-text"),
 exchageIcon = document.querySelector(".exchange"),
 selectTag = document.querySelectorAll("select"),
-icons = document.querySelectorAll(".row i");
+icons = document.querySelectorAll(".btns button");
 translateBtn = document.querySelector("button"),
 
 
@@ -52,7 +52,7 @@ translateBtn.addEventListener("click", () => {
 icons.forEach(icon => {
     icon.addEventListener("click", ({target}) => {
         if(!fromText.value || !toText.value) return;
-        if(target.classList.contains("fa-copy")) {
+        if(target.classList.contains("copy")) {
             if(target.id == "from") {
                 navigator.clipboard.writeText(fromText.value);
             } else {
@@ -67,7 +67,7 @@ icons.forEach(icon => {
                 utterance = new SpeechSynthesisUtterance(toText.value);
                 utterance.lang = selectTag[1].value;
             }
-            speechSynthesis.speak(utterance);
+            // speechSynthesis.speak(utterance);
         }
     });
 });

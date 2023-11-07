@@ -15,16 +15,18 @@ body{
 }
 .container{
   max-width:75%;
-  width: 100%;
-  /* margin: 6rem auto; */
+  /* width: 100%; */
+  margin: 0 300px;
+  margin-top: 20px;
+  margin-bottom: 60px;
   padding: 30px;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.01);
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);  */
 }
 .wrapper{
   border-radius: 5px;
@@ -130,18 +132,19 @@ body{
 }
 .header {
   overflow: hidden;
-  /* background-color: #e0e0eb; */
   background: rgba(255, 255, 255, .8);
-  backdrop-filter: blur(2px);
+   backdrop-filter: blur(2px); 
   padding: 5px 20px;
-  position: absolute;
+  position: sticky; 
   width: 100%;
   z-index: 1000;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  display:flex;
+  align-items: center;
+  gap: 10px;
+  top:0
 }
-
 .header a {
-  float: left;
   color: black;
   text-align: center;
   padding: 10px;
@@ -151,22 +154,23 @@ body{
   border-radius: 4px;
 }
 
-
 .header a.logo {
   font-size: 25px;
   /* font-weight: bold; */
 }
 .footer{
   text-align: center;
+  background: rgba(255, 255, 255, .8);
   width: 100%;
-  max-width: 1120px;
+  /* max-width: 1120px; */
   height: 50px;
   font-size: small;
-  color: white;
-  position: absolute;
-  left: 50%;
+  color: black;
+  position: fixed;
+  /* left: 50%; */
   bottom: 0;
-  transform: translateX(-50%);
+  /* margin-top: 50px; */
+  /* transform: translateX(-50%); */
 }
 
 /* Float the link section to the right */
@@ -177,12 +181,35 @@ body{
    height:50px;
    width: 50px;
 }
+.btns{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+}
+@media (max-width: 1200px){
+  .container{
+    margin: 0 100px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    padding: 20px;
+  }
+}
 
 @media (max-width: 660px){
+  
+  .header{
+     gap:0px;
+     justify-content: center;
+  }
   .container{
+    margin: 0 80px;
+    margin-top: 20px;
+    margin-bottom: 60px;
     padding: 20px;
   }
   .wrapper .text-input{
+    /* margin-top:100px; */
+    
     flex-direction: column;
   }
   .text-input .to-text{
@@ -204,5 +231,9 @@ body{
   }
   .controls .exchange{
     font-size: 14px;
+  }
+  .btns{
+    display: flex;
+    flex-direction: column;
   }
 }
