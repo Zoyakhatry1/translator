@@ -4,7 +4,34 @@ exchageIcon = document.querySelector(".exchange"),
 selectTag = document.querySelectorAll("select"),
 icons = document.querySelectorAll(".btns button");
 translateBtn = document.querySelector("button"),
+document.getElementById('fileInput').addEventListener('change', handleFile);
 
+function handleFile(event) {
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+            const contents = e.target.result;
+
+            mammoth.extractRawText({ arrayBuffer: contents })
+                        .then(displayText)
+                        .catch(error => console.error('Error extracting text:', error));
+                };
+
+            reader.readAsArrayBuffer(file);
+    }
+}
+function displayText(result) {
+    const outputTextarea = document.getElementById('good');
+
+    if (result.value.trim()) {
+        outputTextarea.value = result.value;
+    } else {
+        outputTextarea.value = 'No text found in the document.';
+    }
+}
 
 
 selectTag.forEach((tag, id) => {
@@ -51,7 +78,8 @@ translateBtn.addEventListener("click", () => {
 
 icons.forEach(icon => {
     icon.addEventListener("click", ({target}) => {
-        if(!fromText.value || !toText.value) return;
+        if(!fromText.value || !toText.value) 
+        return;
         if(target.classList.contains("copy")) {
             if(target.id == "from") {
                 navigator.clipboard.writeText(fromText.value);

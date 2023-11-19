@@ -49,6 +49,9 @@
       </div>
       <button>Translate Text</button>
       <div class="btns">
+      <button class="extract">
+          <input type="file" id="fileInput" accept=".docx">
+        </button>
       <button id="from" class="copy">Copy text left</button>
       <button id="to" class="copy">Copy text right</button>
       <button onclick="ExportToDoc('hindi')">Open in Word</button>
@@ -58,6 +61,7 @@
        <p>&copy; Department of Computer Science and Engineering, NIT Srinagar </p>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.0.0/mammoth.browser.min.js"></script>
     <script src="js/countries.js"></script>
     <script src="js/script.js"></script>
     <script src="js/texttoword.js"></script>
